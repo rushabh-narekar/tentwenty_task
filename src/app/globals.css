@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9fafb;
+  --foreground: #1a1a1a;
+  --surface-muted: #f9fafb;
+  --border-subtle: #e5e7eb;
+  --primary-600: #1c64f2;
+  --primary-700: #1a56db;
+  --primary-50: #ebf5ff;
+  --primary: var(--primary-600, #1c64f2);
+  --primary-hover: var(--primary-700, #1a56db);
+  --border: #e5e5e5;
+  --muted: #6b7280;
+  --gray-600: #4b5563;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-50: var(--primary-50, #ebf5ff);
+  --color-primary-600: var(--primary-600, #1c64f2);
+  --color-primary-700: var(--primary-700, #1a56db);
+  --color-surface-muted: var(--surface-muted);
+  --font-sans: var(--font-inter);
+}
+
+.card-shadow {
+  box-shadow:
+    0px 1px 2px -1px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.select-filter {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background-color: #ffffff;
+}
+
+.select-field-muted {
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--surface-muted);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+button:not(:disabled),
+a,
+select,
+label:has(input[type="checkbox"]),
+[role="button"],
+[role="menuitem"] {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+dialog {
+  border: none;
+  padding: 0;
+}
+
+dialog::backdrop {
+  background: var(--gray-600, #4b5563);
+}
