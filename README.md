@@ -101,6 +101,6 @@ Roughly 10 hours:
 
 ## Live demo
 
-_Add your deployed URL here before submitting._
+https://tentwenty-task-seven.vercel.app/login
 
 Deploy to Vercel with the same env vars from `.env.local`.
