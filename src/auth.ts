@@ -2,7 +2,11 @@ import { validateCredentials } from "@/lib/services/user-service";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
+const authSecret =
+  process.env.AUTH_SECRET ?? "ticktock-demo-auth-secret-change-in-production";
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   providers: [
     Credentials({
       name: "Credentials",
@@ -46,5 +50,5 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       return session;
     },
   },
-  secret: process.env.AUTH_SECRET,
+  secret: authSecret,
 });
